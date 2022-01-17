@@ -6,7 +6,7 @@ public class House {
 	private double bath = 0;
 	private int bedroom = 0;
 	private int price;
-	private String adress = "";
+	private String address = "";
 	private double lot;
 	private boolean pool;
 	private String image;
@@ -17,7 +17,7 @@ public class House {
 		this.sqfoot = sqfoot;
 		this.bath = bath;
 		this.price = price;
-		this.adress = adress;
+		this.address = adress;
 		this.lot = lot;
 		this.pool = pool;
 		this.image = image;
@@ -40,8 +40,8 @@ public class House {
 		return price;
 	}
 
-	public String adress() {
-		return adress;
+	public String address() {
+		return address;
 	}
 
 	public double lot() {
@@ -61,7 +61,7 @@ public class House {
 
 	@Override
 	public String toString() {
-		return sqfoot + bath + bedroom + price + adress + lot + pool + image;
+		return sqfoot +" "+ bath +" "+ bedroom +" "+ price +" "+ address +" "+ lot +" "+ pool +" "+ image+" ";
 
 	}
 

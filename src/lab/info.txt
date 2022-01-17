@@ -1,3 +1,3 @@
-3520 4.0 4 775000 
+3520 4 4 775000 
 2324 Dobbins Ln Irving TX 75063
 7623 true src/lab/house1.png
