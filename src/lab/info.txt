@@ -1,3 +1,12 @@
 3520 4 4 775000 
 2324 Dobbins Ln Irving TX 75063
 7623 true src/lab/house1.png
+23688 9.5 6 43000000
+6915 Baltimore Dr, Dallas, TX 75205
+80150 true src/lab/house2.png
+19673 12 8 5000000
+3716 N White Chapel Blvd, Southlake, TX 76092
+65775 true src/lab/house3.png
+24773 12.5 8 10000000
+940 W Dove Rd, Southlake, TX 76092
+210394 true src/lab/house4.png

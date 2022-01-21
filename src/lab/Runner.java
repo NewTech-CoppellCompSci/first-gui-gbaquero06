@@ -20,8 +20,9 @@ public class Runner {
 	private static ArrayList<House> houses;
 
 	public static void main(String[] args) throws Exception {
+
 		houses = new ArrayList<House>();
-		
+
 		Scanner inFile = new Scanner(new File("src/lab/info.txt"));
 		while (inFile.hasNext()) {
 			int sqfoot = inFile.nextInt();
@@ -43,51 +44,19 @@ public class Runner {
 	}
 
 	public static void MainPage() {
-		
+
 		// create overall frame
 		JFrame frame = new JFrame("Homes for sale");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// end program when red x is hit
 		// give it size
-		frame.setSize(600, 600);
+		frame.setSize(700, 700);
 		// everythig else goes here
 
-		/*
-		 * // add a label(text) JLabel label1 = new JLabel("First Label Ever!!!");
-		 * label1.setBounds(20, 40, 200, 30);// x,y.with,heigh frame.add(label1);
-		 * 
-		 * // add text field(only 1 line long) JTextField field1 = new
-		 * JTextField("Enter text Here..."); field1.setBounds(20, 100, 200, 30);
-		 * frame.add(field1);
-		 * 
-		 * // Text areas can be multiple lines long final JTextArea field2 = new
-		 * JTextArea("Enter text Here..."); field2.setBounds(260, 100, 300, 100);
-		 * field2.setLineWrap(true); frame.add(field2);
-		 * 
-		 * // Label for the output final JLabel labelOutput = new
-		 * JLabel(field1.getText()); labelOutput.setBounds(20, 230, 560, 100);
-		 * frame.add(labelOutput);
-		 * 
-		 * // create button JButton button1 = new JButton("Press Me!");
-		 * button1.setBounds(260, 40, 140, 30);
-		 * 
-		 * // create action listener button1.addActionListener(new ActionListener() {
-		 * 
-		 * @Override public void actionPerformed(ActionEvent e) {
-		 * labelOutput.setText(field2.getText()); } });
-		 * 
-		 * frame.add(button1);
-		 */
-
 		// create pic object
-		ImageIcon pic1 = new ImageIcon("src/lab/house1.png");
+		ImageIcon pic1 = new ImageIcon(houses.get(0).image());
 		// scale pic object
 		ImageIcon scaledPic1 = new ImageIcon(pic1.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
 
-		// label with original pic
-		// JButton house = new JButton(pic1);
-		// house.setBounds(20, 350, pic1.getIconWidth(),pic1.getIconHeight());
-		// frame.add(house);
-		// label with scaled pic
 		JButton house1 = new JButton(scaledPic1);
 		house1.setBounds(20, 30, scaledPic1.getIconWidth(), scaledPic1.getIconHeight());
 		frame.add(house1);
@@ -100,7 +69,66 @@ public class Runner {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				house1();
+
+				houseGUI(houses.get(0));
+			}
+		});
+
+		ImageIcon pic2 = new ImageIcon(houses.get(1).image());
+		ImageIcon scaledPic2 = new ImageIcon(pic2.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
+
+		JButton house2 = new JButton(scaledPic2);
+		house2.setBounds(20, 220, scaledPic2.getIconWidth(), scaledPic2.getIconHeight());
+		frame.add(house2);
+		JLabel LabelHouse2 = new JLabel(houses.get(1).address());
+		LabelHouse2.setBounds(20, 370, 240, 30);// x,y.with,heigh
+		frame.add(LabelHouse2);
+
+		house2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+
+				houseGUI(houses.get(1));
+			}
+		});
+		ImageIcon pic3 = new ImageIcon(houses.get(2).image());
+		ImageIcon scaledPic3 = new ImageIcon(pic3.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
+
+		JButton house3 = new JButton(scaledPic3);
+		house3.setBounds(20, 410, scaledPic3.getIconWidth(), scaledPic3.getIconHeight());
+		frame.add(house3);
+		JLabel LabelHouse3 = new JLabel(houses.get(2).address());
+		LabelHouse3.setBounds(20, 560, 240, 30);// x,y.with,heigh
+		frame.add(LabelHouse3);
+
+		house3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+
+				houseGUI(houses.get(2));
+			}
+		});
+		ImageIcon pic4 = new ImageIcon(houses.get(3).image());
+		ImageIcon scaledPic4 = new ImageIcon(pic4.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
+
+		JButton house4 = new JButton(scaledPic4);
+		house4.setBounds(350, 30, scaledPic4.getIconWidth(), scaledPic3.getIconHeight());
+		frame.add(house4);
+		JLabel LabelHouse4 = new JLabel(houses.get(3).address());
+		LabelHouse4.setBounds(350, 180, 240, 30);// x,y.with,heigh
+		frame.add(LabelHouse4);
+
+		house4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+
+				houseGUI(houses.get(3));
 			}
 		});
 
@@ -110,12 +138,15 @@ public class Runner {
 		frame.setVisible(true);
 	}
 
-	public static void house1() {
-		
+	/*
+	 * a GUI for a single house listing
+	 */
+	public static void houseGUI(House house) {
+
 		JFrame frame = new JFrame("House 1");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		frame.setSize(600, 600);
+		frame.setSize(700, 700);
 		JButton goback = new JButton("Go back to home page");
 		goback.setBounds(10, 10, 200, 30);// x,y.with,heigh
 		frame.add(goback);
@@ -127,49 +158,43 @@ public class Runner {
 				MainPage();
 			}
 		});
-		ImageIcon pic1 = new ImageIcon("src/lab/house1.png");
+		ImageIcon pic1 = new ImageIcon(house.image());
 		// scale pic object
 		ImageIcon scaledPic1 = new ImageIcon(pic1.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
 
-		// label with original pic
-		// JButton house = new JButton(pic1);
-		// house.setBounds(20, 350, pic1.getIconWidth(),pic1.getIconHeight());
-		// frame.add(house);
-		// label with scaled pic
 		JButton house1 = new JButton(scaledPic1);
 		house1.setBounds(20, 50, scaledPic1.getIconWidth(), scaledPic1.getIconHeight());
 		frame.add(house1);
 		JLabel info = new JLabel("Information about this house:");
 		info.setBounds(350, 20, 300, 30);// x,y.with,heigh
 		frame.add(info);
-		JLabel price = new JLabel("Price:       $" + houses.get(0).price());
+		JLabel price = new JLabel("Price:       $" + house.price());
 		price.setBounds(300, 40, 300, 30);// x,y.with,heigh
 		frame.add(price);
-		
-		JLabel address = new JLabel("Address:      " + houses.get(0).address());
-		address.setBounds(300, 60, 300, 30);// x,y.with,heigh
+
+		JLabel address = new JLabel("Address:      " + house.address());
+		address.setBounds(300, 60, 550, 30);
 		frame.add(address);
-		
-		JLabel sqft = new JLabel("sqft:            " + houses.get(0).sqfoot());
+
+		JLabel sqft = new JLabel("sqft:            " + house.sqfoot());
 		sqft.setBounds(300, 80, 300, 30);// x,y.with,heigh
 		frame.add(sqft);
-		
-		JLabel bed = new JLabel("Number of bedrooms:      " + houses.get(0).bedroom());
+
+		JLabel bed = new JLabel("Number of bedrooms:      " + house.bedroom());
 		bed.setBounds(300, 100, 300, 30);// x,y.with,heigh
 		frame.add(bed);
-		
-		JLabel bath = new JLabel("Number of bathrooms:      " + houses.get(0).bath());
+
+		JLabel bath = new JLabel("Number of bathrooms:      " + house.bath());
 		bath.setBounds(300, 120, 300, 30);// x,y.with,heigh
 		frame.add(bath);
-		JLabel lot = new JLabel("Lot size:      " + houses.get(0).lot());
+		JLabel lot = new JLabel("Lot size:      " + house.lot());
 		lot.setBounds(300, 140, 300, 30);// x,y.with,heigh
 		frame.add(lot);
-		if(houses.get(0).pool()==true) {
+		if (house.pool() == true) {
 			JLabel pool = new JLabel("Has pool:      Yes");
 			pool.setBounds(300, 160, 300, 30);// x,y.with,heigh
 			frame.add(pool);
-		}
-		else {
+		} else {
 			JLabel pool = new JLabel("Has pool:      No");
 			pool.setBounds(300, 160, 300, 30);// x,y.with,heigh
 			frame.add(pool);

@@ -2,14 +2,15 @@ package lab;
 
 public class House {
 	// parameters
-	private int sqfoot = 0;
-	private double bath = 0;
-	private int bedroom = 0;
+	private int sqfoot;
+	private double bath;
+	private int bedroom;
 	private int price;
-	private String address = "";
+	private String address;
 	private double lot;
 	private boolean pool;
 	private String image;
+	
 	// constructor
 
 	public House(int sqfoot, double bath, int bedroom, int price, String adress, double lot, boolean pool,
@@ -21,6 +22,8 @@ public class House {
 		this.lot = lot;
 		this.pool = pool;
 		this.image = image;
+		this.bedroom=bedroom;
+		
 	}
 
 	// getter methods
@@ -55,7 +58,7 @@ public class House {
 	public String image() {
 		return image;
 	}
-
+	
 	public static void add(House house) {
 	}
 
