@@ -61,7 +61,7 @@ public class House {
 	
 	public static void add(House house) {
 	}
-
+//to string method
 	@Override
 	public String toString() {
 		return sqfoot +" "+ bath +" "+ bedroom +" "+ price +" "+ address +" "+ lot +" "+ pool +" "+ image+" ";

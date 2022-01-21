@@ -24,6 +24,7 @@ public class Runner {
 		houses = new ArrayList<House>();
 
 		Scanner inFile = new Scanner(new File("src/lab/info.txt"));
+		//adds the information to the array list
 		while (inFile.hasNext()) {
 			int sqfoot = inFile.nextInt();
 			double bath = inFile.nextDouble();
@@ -35,11 +36,9 @@ public class Runner {
 			boolean pool = inFile.nextBoolean();
 			String image = inFile.next();
 			houses.add(new House(sqfoot, bath, bedroom, price, address, lot, pool, image));
-
+			
 		}
-		for (int i = 0; i < houses.size(); i++) {// for loop to use the array list
-			System.out.println(houses.get(i));// print the pet at the designated spot (i)
-		}
+		
 		MainPage();
 	}
 
@@ -100,7 +99,7 @@ public class Runner {
 		house3.setBounds(20, 410, scaledPic3.getIconWidth(), scaledPic3.getIconHeight());
 		frame.add(house3);
 		JLabel LabelHouse3 = new JLabel(houses.get(2).address());
-		LabelHouse3.setBounds(20, 560, 240, 30);// x,y.with,heigh
+		LabelHouse3.setBounds(20, 560, 300, 30);// x,y.with,heigh
 		frame.add(LabelHouse3);
 
 		house3.addActionListener(new ActionListener() {
@@ -129,6 +128,44 @@ public class Runner {
 				frame.setVisible(false);
 
 				houseGUI(houses.get(3));
+			}
+		});
+		ImageIcon pic5 = new ImageIcon(houses.get(4).image());
+		ImageIcon scaledPic5 = new ImageIcon(pic5.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
+
+		JButton house5 = new JButton(scaledPic5);
+		house5.setBounds(350, 220, scaledPic5.getIconWidth(), scaledPic5.getIconHeight());
+		frame.add(house5);
+		JLabel LabelHouse5 = new JLabel(houses.get(4).address());
+		LabelHouse5.setBounds(350, 370, 300, 30);// x,y.with,heigh
+		frame.add(LabelHouse5);
+
+		house5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+
+				houseGUI(houses.get(4));
+			}
+		});
+		ImageIcon pic6 = new ImageIcon(houses.get(5).image());
+		ImageIcon scaledPic6 = new ImageIcon(pic6.getImage().getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
+
+		JButton house6 = new JButton(scaledPic6);
+		house6.setBounds(350, 410, scaledPic6.getIconWidth(), scaledPic6.getIconHeight());
+		frame.add(house6);
+		JLabel LabelHouse6 = new JLabel(houses.get(5).address());
+		LabelHouse6.setBounds(350, 560, 300, 30);// x,y.with,heigh
+		frame.add(LabelHouse6);
+
+		house6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+
+				houseGUI(houses.get(5));
 			}
 		});
 

@@ -10,3 +10,9 @@
 24773 12.5 8 10000000
 940 W Dove Rd, Southlake, TX 76092
 210394 true src/lab/house4.png
+11531 10 6 9500000
+5513 Montclair Dr, Colleyville, TX 76034
+95832 true src/lab/house5.png
+12223 6.5 5 6500000
+1312 Tinker Rd, Colleyville, TX 76034
+326264 true src/lab/house6.png
